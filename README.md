@@ -1,4 +1,3 @@
-
 ## Device specifications
 
 | Device       | Redmi K20 Pro                               |
@@ -62,6 +61,22 @@ Then add these projects to .repo/manifest.xml:
 ```xml
 <project path="device/xiaomi/raphael" name="mauronofrio/android_device_xiaomi_raphael" remote="github" revision="android-9.0" />
 ```
+add it to your ~/.bashrc and reload it 
+
+
+export OF_STATUS_INDENT_LEFT="48"
+
+export OF_STATUS_INDENT_RIGHT="48"
+
+export OF_SCREEN_H=2340
+
+export OF_USE_MAGISKBOOT=1 export
+
+export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+
+export FOX_USE_LZMA_COMPRESSION=1
+
+export LZMA_RAMDISK_TARGETS="[recovery]"
 
 Finally execute these:
 
