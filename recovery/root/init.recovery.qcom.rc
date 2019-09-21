@@ -38,7 +38,6 @@ on fs
 on init
     mkdir /system/bin
     mkdir /system/etc
-    mkdir /cache/recovery
     symlink /system/etc /etc
     symlink /sbin/busybox /system/bin/sh
     symlink /vendor/manifest.xml /system/manifest.xml
