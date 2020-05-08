@@ -1,0 +1,39 @@
+#!/sbin/sh
+#
+# temporarily switch device ID
+#
+
+# valid IDs
+one="raphaelin"
+two="raphael"
+
+# function to abort with error code
+abort() {
+   echo "$@"
+   exit 1
+}
+
+# setprop command
+cmd=/sbin/resetprop
+[ ! -x $cmd ] && cmd=/sbin/setprop
+[ ! -x $cmd ] && abort "Error! No command to set the properties."
+
+# get the current device ID
+prop="ro.product.device"
+currdev=$(getprop $prop)
+[ -z "$currdev" ] && abort "Error! Device ID not found."
+
+# decide how to change it
+newdev="$one"
+[ "$currdev" = "$newdev" ] && newdev="$two"
+
+# try to change it
+echo "- Switching the device ID from \"$currdev\" to to \"$newdev\" ..."
+$cmd $prop $newdev
+
+# check that the change was successful
+currdev=$(getprop $prop)
+[ "$currdev" = "$newdev" ] && echo "Success!" || abort "Error!"
+exit 0
+
+# end
