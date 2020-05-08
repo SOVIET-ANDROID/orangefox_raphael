@@ -45,8 +45,12 @@ void load_properties(const char *model) {
     property_set("ro.product.device", model);
 }
 
+// #define OF_SINGLE_DEVICE_NAME 
 
 void vendor_load_properties() {
+#ifdef OF_SINGLE_DEVICE_NAME
+   load_properties("raphael");
+#else
     std::string device_region = android::base::GetProperty("ro.boot.hwc", "");
     if (device_region == "INDIA")
     {
@@ -56,6 +60,7 @@ void vendor_load_properties() {
     {
         load_properties("raphael");
     }
+#endif
 }
 
 }  // namespace init
