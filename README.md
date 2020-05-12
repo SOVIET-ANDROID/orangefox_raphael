@@ -19,10 +19,6 @@
 |      |1,6 μm 4 in 1 pixel size (12MP), Second rear camera telephoto 5P lens, AF, FOV 49.6, 
 |      |Third rear camera 13MP ultra wide angle 124º f/2.4 aperture, Third rear camera sensor Samsung S5K3L6 1.12μm 1/3" |
 
-## Device picture
-
-![Redmi K20 Pro](http://www.mobile2go.com.my/images/thumbs/0007345_xioami-redmi-k20-pro-128gb-256gb-rom-6gb-8gb-ram-original-imported-set.jpeg)
- 
 
 # android_device_xiaomi_raphael
 For building TWRP for Xiaomi Redmi K20 Pro
