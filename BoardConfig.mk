@@ -16,6 +16,8 @@
 # limitations under the License.
 #
 
+ALLOW_MISSING_DEPENDENCIES := true
+SOONG_ALLOW_MISSING_DEPENDENCIES := true
 DEVICE_PATH := device/xiaomi/raphael
 
 # Architecture
