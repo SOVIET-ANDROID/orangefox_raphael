@@ -45,6 +45,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
         export OF_USE_SYSTEM_FINGERPRINT=1
 
+	# Metadata encription
+	export OF_FBE_METADATA_MOUNT_IGNORE=1
+
 	# OTA for custom ROMs
         export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
         export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
