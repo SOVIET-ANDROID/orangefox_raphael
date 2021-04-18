@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2019-2020 The OrangeFox Recovery Project
+# 	Copyright (C) 2019-2021 The OrangeFox Recovery Project
 #	
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -41,9 +41,12 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_NANO_EDITOR=1
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_ZIP_BINARY=1
+	export FOX_USE_SED_BINARY=1
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
         export OF_USE_SYSTEM_FINGERPRINT=1
+   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-21.4.zip
 
 	# OTA for custom ROMs
         export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
@@ -56,6 +59,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
         # -- end R11 settings --
+
+	# run a process after formatting data to work-around MTP issues
+	export OF_RUN_POST_FORMAT_PROCESS=1
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
