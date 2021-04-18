@@ -132,4 +132,8 @@ TW_EXCLUDE_TWRPAPP := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
+
+# OEM otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    vendor/recovery/security/miui
 #
