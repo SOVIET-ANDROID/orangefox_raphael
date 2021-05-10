@@ -42,6 +42,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_ZIP_BINARY=1
 	export FOX_USE_SED_BINARY=1
+	export FOX_USE_XZ_UTILS=1
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
         export OF_USE_SYSTEM_FINGERPRINT=1
@@ -54,10 +55,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
         # -- add settings for R11 --
         export FOX_R11=1
-        export FOX_ADVANCED_SECURITY=1
         export OF_USE_TWRP_SAR_DETECT=1
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
+        #export FOX_ADVANCED_SECURITY=1
         # -- end R11 settings --
 
 	# run a process after formatting data to work-around MTP issues
